@@ -12,7 +12,7 @@
 		A92239F0206F5E2F00501AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92239EE206F5E2F00501AF8 /* Main.storyboard */; };
 		A92239F2206F5E2F00501AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92239F1206F5E2F00501AF8 /* Assets.xcassets */; };
 		A92239F5206F5E2F00501AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92239F3206F5E2F00501AF8 /* LaunchScreen.storyboard */; };
-		A9223A00206F5E2F00501AF8 /* BreathingSquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92239FF206F5E2F00501AF8 /* BreathingSquareTests.swift */; };
+		A9223A0B206F63B900501AF8 /* BreathingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +34,8 @@
 		A92239F4206F5E2F00501AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A92239F6206F5E2F00501AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A92239FB206F5E2F00501AF8 /* BreathingSquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathingSquareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A92239FF206F5E2F00501AF8 /* BreathingSquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSquareTests.swift; sourceTree = "<group>"; };
 		A9223A01206F5E2F00501AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 		A92239FE206F5E2F00501AF8 /* BreathingSquareTests */ = {
 			isa = PBXGroup;
 			children = (
-				A92239FF206F5E2F00501AF8 /* BreathingSquareTests.swift */,
+				A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */,
 				A9223A01206F5E2F00501AF8 /* Info.plist */,
 			);
 			path = BreathingSquareTests;
@@ -150,6 +150,7 @@
 					};
 					A92239FA206F5E2F00501AF8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A92239E6206F5E2F00501AF8;
 					};
@@ -208,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9223A00206F5E2F00501AF8 /* BreathingSquareTests.swift in Sources */,
+				A9223A0B206F63B900501AF8 /* BreathingViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +385,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TEB3BLN4BF;
 				INFOPLIST_FILE = BreathingSquareTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huralnyk.BreathingSquareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreathingSquare.app/BreathingSquare";
@@ -401,6 +404,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TEB3BLN4BF;
 				INFOPLIST_FILE = BreathingSquareTests/Info.plist;

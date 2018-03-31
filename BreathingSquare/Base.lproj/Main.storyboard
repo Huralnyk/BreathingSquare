@@ -15,7 +15,7 @@
         <!--Breathing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BreathingViewController" customModule="BreathingSquare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BreathingViewController" id="BYZ-38-t0r" customClass="BreathingViewController" customModule="BreathingSquare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +71,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="breathingCycleTimerLabel" destination="giC-jf-Ot2" id="dO1-YQ-Jam"/>
+                        <outlet property="breathingView" destination="KJp-LP-Fda" id="gxM-BM-SaC"/>
+                        <outlet property="currentPhaseTimerLabel" destination="pog-63-lIk" id="Vql-dw-o2y"/>
+                        <outlet property="phaseTypeLabel" destination="SSN-d0-EN7" id="djU-e0-fmq"/>
+                        <outlet property="promptLabel" destination="46S-ry-YrJ" id="H6s-B1-ayL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
