@@ -13,7 +13,11 @@
 		A92239F2206F5E2F00501AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92239F1206F5E2F00501AF8 /* Assets.xcassets */; };
 		A92239F5206F5E2F00501AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92239F3206F5E2F00501AF8 /* LaunchScreen.storyboard */; };
 		A9223A0B206F63B900501AF8 /* BreathingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */; };
-		A9223A11206F65BD00501AF8 /* breathing_cycle.json in Resources */ = {isa = PBXBuildFile; fileRef = A9223A10206F65BD00501AF8 /* breathing_cycle.json */; };
+		A9223A13206F667200501AF8 /* BreathingPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A12206F667200501AF8 /* BreathingPhase.swift */; };
+		A9223A15206F66BB00501AF8 /* BreathingPhaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A14206F66BB00501AF8 /* BreathingPhaseProvider.swift */; };
+		A9223A17206F675300501AF8 /* BreathingPhaseProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A16206F675300501AF8 /* BreathingPhaseProviderTests.swift */; };
+		A9223A1D206F6C5200501AF8 /* breathing_cycle.json in Resources */ = {isa = PBXBuildFile; fileRef = A9223A1C206F6C5200501AF8 /* breathing_cycle.json */; };
+		A9223A1F206F6C9700501AF8 /* valid_cycle.json in Resources */ = {isa = PBXBuildFile; fileRef = A9223A1E206F6C9700501AF8 /* valid_cycle.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,11 @@
 		A92239FB206F5E2F00501AF8 /* BreathingSquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathingSquareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9223A01206F5E2F00501AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewControllerTests.swift; sourceTree = "<group>"; };
-		A9223A10206F65BD00501AF8 /* breathing_cycle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = breathing_cycle.json; sourceTree = "<group>"; };
+		A9223A12206F667200501AF8 /* BreathingPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPhase.swift; sourceTree = "<group>"; };
+		A9223A14206F66BB00501AF8 /* BreathingPhaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPhaseProvider.swift; sourceTree = "<group>"; };
+		A9223A16206F675300501AF8 /* BreathingPhaseProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPhaseProviderTests.swift; sourceTree = "<group>"; };
+		A9223A1C206F6C5200501AF8 /* breathing_cycle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breathing_cycle.json; sourceTree = "<group>"; };
+		A9223A1E206F6C9700501AF8 /* valid_cycle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = valid_cycle.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */,
+				A9223A16206F675300501AF8 /* BreathingPhaseProviderTests.swift */,
+				A9223A19206F6BEE00501AF8 /* Resources */,
 				A9223A01206F5E2F00501AF8 /* Info.plist */,
 			);
 			path = BreathingSquareTests;
@@ -110,7 +120,7 @@
 		A9223A0D206F654100501AF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A9223A10206F65BD00501AF8 /* breathing_cycle.json */,
+				A9223A1C206F6C5200501AF8 /* breathing_cycle.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 		A9223A0E206F655200501AF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9223A12206F667200501AF8 /* BreathingPhase.swift */,
+				A9223A14206F66BB00501AF8 /* BreathingPhaseProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +141,14 @@
 				A92239EE206F5E2F00501AF8 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A9223A19206F6BEE00501AF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9223A1E206F6C9700501AF8 /* valid_cycle.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +238,7 @@
 				A92239F5206F5E2F00501AF8 /* LaunchScreen.storyboard in Resources */,
 				A92239F2206F5E2F00501AF8 /* Assets.xcassets in Resources */,
 				A92239F0206F5E2F00501AF8 /* Main.storyboard in Resources */,
-				A9223A11206F65BD00501AF8 /* breathing_cycle.json in Resources */,
+				A9223A1D206F6C5200501AF8 /* breathing_cycle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9223A1F206F6C9700501AF8 /* valid_cycle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92239ED206F5E2F00501AF8 /* BreathingViewController.swift in Sources */,
+				A9223A13206F667200501AF8 /* BreathingPhase.swift in Sources */,
 				A92239EB206F5E2F00501AF8 /* AppDelegate.swift in Sources */,
+				A9223A15206F66BB00501AF8 /* BreathingPhaseProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9223A0B206F63B900501AF8 /* BreathingViewControllerTests.swift in Sources */,
+				A9223A17206F675300501AF8 /* BreathingPhaseProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
