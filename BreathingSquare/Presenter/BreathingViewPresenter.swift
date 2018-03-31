@@ -26,7 +26,7 @@ extension BreathingViewPresenter: BreathingViewOutput {
     
     func onViewLoad() {
         let phases = provider.fetchPhases()
-        
+        let viewModels = phases.flatMap(BreathingPhaseViewModel.init(phase:))
     }
     
 }
