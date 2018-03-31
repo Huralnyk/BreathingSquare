@@ -13,6 +13,7 @@
 		A92239F2206F5E2F00501AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92239F1206F5E2F00501AF8 /* Assets.xcassets */; };
 		A92239F5206F5E2F00501AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92239F3206F5E2F00501AF8 /* LaunchScreen.storyboard */; };
 		A9223A0B206F63B900501AF8 /* BreathingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */; };
+		A9223A11206F65BD00501AF8 /* breathing_cycle.json in Resources */ = {isa = PBXBuildFile; fileRef = A9223A10206F65BD00501AF8 /* breathing_cycle.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		A92239FB206F5E2F00501AF8 /* BreathingSquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathingSquareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9223A01206F5E2F00501AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9223A0A206F63B900501AF8 /* BreathingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewControllerTests.swift; sourceTree = "<group>"; };
+		A9223A10206F65BD00501AF8 /* breathing_cycle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = breathing_cycle.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +79,10 @@
 		A92239E9206F5E2F00501AF8 /* BreathingSquare */ = {
 			isa = PBXGroup;
 			children = (
-				A92239EA206F5E2F00501AF8 /* AppDelegate.swift */,
-				A92239EC206F5E2F00501AF8 /* BreathingViewController.swift */,
-				A92239EE206F5E2F00501AF8 /* Main.storyboard */,
-				A92239F1206F5E2F00501AF8 /* Assets.xcassets */,
-				A92239F3206F5E2F00501AF8 /* LaunchScreen.storyboard */,
-				A92239F6206F5E2F00501AF8 /* Info.plist */,
+				A9223A0E206F655200501AF8 /* Model */,
+				A9223A0F206F655C00501AF8 /* View */,
+				A9223A0D206F654100501AF8 /* Resources */,
+				A9223A0C206F651A00501AF8 /* Supporting Files */,
 			);
 			path = BreathingSquare;
 			sourceTree = "<group>";
@@ -94,6 +94,41 @@
 				A9223A01206F5E2F00501AF8 /* Info.plist */,
 			);
 			path = BreathingSquareTests;
+			sourceTree = "<group>";
+		};
+		A9223A0C206F651A00501AF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A92239F1206F5E2F00501AF8 /* Assets.xcassets */,
+				A92239F3206F5E2F00501AF8 /* LaunchScreen.storyboard */,
+				A92239EA206F5E2F00501AF8 /* AppDelegate.swift */,
+				A92239F6206F5E2F00501AF8 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9223A0D206F654100501AF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9223A10206F65BD00501AF8 /* breathing_cycle.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9223A0E206F655200501AF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9223A0F206F655C00501AF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A92239EC206F5E2F00501AF8 /* BreathingViewController.swift */,
+				A92239EE206F5E2F00501AF8 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +218,7 @@
 				A92239F5206F5E2F00501AF8 /* LaunchScreen.storyboard in Resources */,
 				A92239F2206F5E2F00501AF8 /* Assets.xcassets in Resources */,
 				A92239F0206F5E2F00501AF8 /* Main.storyboard in Resources */,
+				A9223A11206F65BD00501AF8 /* breathing_cycle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TEB3BLN4BF;
-				INFOPLIST_FILE = BreathingSquare/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BreathingSquare/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huralnyk.BreathingSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,7 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TEB3BLN4BF;
-				INFOPLIST_FILE = BreathingSquare/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BreathingSquare/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huralnyk.BreathingSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
