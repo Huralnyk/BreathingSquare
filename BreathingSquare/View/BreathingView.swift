@@ -10,10 +10,14 @@ import Foundation
 
 protocol BreathingViewInput: class {
     
+    func setupInitialState()
+    func startCycle(viewModels: [BreathingPhaseViewModel])
+    
 }
 
 protocol BreathingViewOutput {
     
     func onViewLoad()
+    func onBreathingViewTap()
     
 }

@@ -25,8 +25,13 @@ class BreathingViewPresenter {
 extension BreathingViewPresenter: BreathingViewOutput {
     
     func onViewLoad() {
+        view?.setupInitialState()
+    }
+    
+    func onBreathingViewTap() {
         let phases = provider.fetchPhases()
         let viewModels = phases.flatMap(BreathingPhaseViewModel.init(phase:))
+        view?.startCycle(viewModels: viewModels)
     }
     
 }

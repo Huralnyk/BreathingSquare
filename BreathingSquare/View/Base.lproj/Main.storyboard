@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJp-LP-Fda">
-                                <rect key="frame" x="46.5" y="193" width="281" height="281"/>
+                                <rect key="frame" x="47" y="193.5" width="280" height="280"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i1H-ci-OUq">
-                                        <rect key="frame" x="-46.5" y="-5033" width="0.0" height="10347"/>
+                                        <rect key="frame" x="-47" y="-5033.5" width="0.0" height="10347"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP HERE TO BREATHE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46S-ry-YrJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="10289"/>
@@ -52,6 +51,7 @@
                                     <constraint firstItem="i1H-ci-OUq" firstAttribute="centerX" secondItem="KJp-LP-Fda" secondAttribute="centerX" id="IEl-dA-vgw"/>
                                     <constraint firstItem="i1H-ci-OUq" firstAttribute="centerY" secondItem="KJp-LP-Fda" secondAttribute="centerY" id="KGc-D4-WJF"/>
                                     <constraint firstAttribute="width" secondItem="KJp-LP-Fda" secondAttribute="height" multiplier="1:1" id="UVj-IX-3yh"/>
+                                    <constraint firstAttribute="width" constant="280" id="dTS-Sl-OIa"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining 00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-jf-Ot2">
@@ -67,13 +67,13 @@
                             <constraint firstItem="giC-jf-Ot2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IEQ-US-qkG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="giC-jf-Ot2" secondAttribute="bottom" constant="40" id="KaF-iK-FXE"/>
                             <constraint firstItem="KJp-LP-Fda" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NlY-zZ-qSb"/>
-                            <constraint firstItem="KJp-LP-Fda" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="kRv-7r-3z8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="breathingCycleTimerLabel" destination="giC-jf-Ot2" id="dO1-YQ-Jam"/>
                         <outlet property="breathingView" destination="KJp-LP-Fda" id="gxM-BM-SaC"/>
+                        <outlet property="breathingViewWidth" destination="dTS-Sl-OIa" id="gBc-2q-wrd"/>
                         <outlet property="currentPhaseTimerLabel" destination="pog-63-lIk" id="Vql-dw-o2y"/>
                         <outlet property="phaseTypeLabel" destination="SSN-d0-EN7" id="djU-e0-fmq"/>
                         <outlet property="promptLabel" destination="46S-ry-YrJ" id="H6s-B1-ayL"/>
