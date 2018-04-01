@@ -113,7 +113,6 @@ final class BreathingViewController: UIViewController, BreathingViewInput {
         output?.onBreathingViewTap()
     }
     
-    
     // MARK: - Private Methods
     private func setupPreCycleState() {
         breathingView?.gestureRecognizers = []
@@ -127,11 +126,8 @@ final class BreathingViewController: UIViewController, BreathingViewInput {
     
     private func propertyAnimator(phase: BreathingPhaseViewModel) -> UIViewPropertyAnimator {
         let animator = UIViewPropertyAnimator(duration: phase.duration, curve: .linear) {
-            if case .inhale = phase.type {
-                self.breathingViewWidth?.constant = Constants.initialSquareWidth * 1.0
-            } else if case .exhale = phase.type {
-                self.breathingViewWidth?.constant = Constants.initialSquareWidth * 0.5
-            }
+            let currentWidth = self.breathingViewWidth?.constant ?? 0
+            self.breathingViewWidth?.constant = phase.calculateWidth(current: currentWidth, initial: Constants.initialSquareWidth)
             self.breathingView?.backgroundColor = phase.color
             self.view.layoutIfNeeded()
         }

@@ -35,12 +35,12 @@ extension BreathingPhaseViewModel {
         self.color = color
     }
     
-}
-
-extension BreathingPhaseViewModel: CustomDebugStringConvertible {
-    
-    var debugDescription: String {
-        return "phase: \(type.rawValue), duration: \(duration), color: \(color)"
+    func calculateWidth(current: CGFloat, initial: CGFloat) -> CGFloat {
+        switch self.type {
+        case .inhale: return initial
+        case .exhale: return initial * 0.5
+        case .hold:   return current
+        }
     }
     
 }
