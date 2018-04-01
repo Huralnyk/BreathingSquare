@@ -36,3 +36,11 @@ extension BreathingPhaseViewModel {
     }
     
 }
+
+extension BreathingPhaseViewModel: CustomDebugStringConvertible {
+    
+    var debugDescription: String {
+        return "phase: \(type.rawValue), duration: \(duration), color: \(color)"
+    }
+    
+}

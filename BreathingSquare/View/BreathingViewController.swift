@@ -19,20 +19,25 @@ final class BreathingViewController: UIViewController, BreathingViewInput {
     
     @IBOutlet weak var breathingView: UIView?
     @IBOutlet weak var promptLabel: UILabel?
-    @IBOutlet weak var phaseTypeLabel: UILabel?
-    @IBOutlet weak var currentPhaseTimerLabel: UILabel?
-    @IBOutlet weak var breathingCycleTimerLabel: UILabel?
+    @IBOutlet weak var phaseTitleLabel: UILabel?
+    @IBOutlet weak var phaseTimerLabel: UILabel?
+    @IBOutlet weak var cycleTimerTitleLabel: UILabel?
+    @IBOutlet weak var cycleTimerLabel: UILabel?
     
     @IBOutlet weak var breathingViewWidth: NSLayoutConstraint?
     
+    private var allLabels: [UILabel?] {
+        return [promptLabel, phaseTitleLabel, phaseTimerLabel, cycleTimerTitleLabel, cycleTimerLabel]
+    }
+    
+    private var timerLabels: [UILabel?] {
+        return [phaseTitleLabel, phaseTimerLabel, cycleTimerTitleLabel, cycleTimerLabel]
+    }
+    
     private var output: BreathingViewOutput?
     
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "mm:ss"
-        return formatter
-    }()
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,33 +48,13 @@ final class BreathingViewController: UIViewController, BreathingViewInput {
         output?.onViewLoad()
     }
     
-    // MARK: - UI Actions
-    
-    @objc private func tapBreathingView(recognizer: UITapGestureRecognizer) {
-        output?.onBreathingViewTap()
-    }
-    
+    // MARK: - View Input
     func setupInitialState() {
         breathingView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(tapBreathingView)))
-        
+        allLabels.forEach { $0?.isHidden = true }
         promptLabel?.isHidden = false
-        phaseTypeLabel?.isHidden = true
-        currentPhaseTimerLabel?.isHidden = true
-        breathingCycleTimerLabel?.isHidden = true
         breathingViewWidth?.constant = Constants.initialSquareWidth
         breathingView?.backgroundColor = Constants.initialSquareColor
-    }
-    
-    private func setupPreCycleState() {
-        breathingView?.gestureRecognizers = []
-        promptLabel?.isHidden = true
-    }
-    
-    private func setupRunningCycleState() {
-        promptLabel?.isHidden = true
-        phaseTypeLabel?.isHidden = false
-        currentPhaseTimerLabel?.isHidden = false
-        breathingCycleTimerLabel?.isHidden = false
     }
     
     func runPreCycleAnimation() {
@@ -82,25 +67,62 @@ final class BreathingViewController: UIViewController, BreathingViewInput {
             animations: {
                 self.breathingViewWidth?.constant = Constants.initialSquareWidth * Constants.preCycleSquareWidthRatio
                 self.view.layoutIfNeeded()
-            },
+        },
             completion: { _ in
                 self.output?.onPreCycleAnimationEnd()
-            }
+        }
         )
     }
     
     func runCycleAnimation(viewModels: [BreathingPhaseViewModel]) {
         setupRunningCycleState()
         view.layoutIfNeeded()
+        
         let animators = viewModels.map(propertyAnimator(phase:))
         for (index, animator) in animators.enumerated() {
             if index == animators.index(before: animators.endIndex) {
-                animator.addCompletion { _ in self.output?.onCycleAnimationEnd() }
+                animator.addCompletion { _ in
+                    self.output?.onCycleAnimationEnd()
+                }
             } else {
-                animator.addCompletion { _ in animators[index + 1].startAnimation() }
+                animator.addCompletion { _ in
+                    animators[index + 1].startAnimation()
+                    self.output?.onPhaseAnimationStart(phase: viewModels[index + 1])
+                }
             }
         }
+        
         animators.first?.startAnimation()
+        viewModels.first.map { output?.onPhaseAnimationStart(phase: $0) }
+    }
+    
+    func update(phaseTitle: String) {
+        phaseTitleLabel?.text = phaseTitle
+    }
+    
+    func update(phaseTimeLeft: String) {
+        phaseTimerLabel?.text = phaseTimeLeft
+    }
+    
+    func update(cycleTimeLeft: String) {
+        cycleTimerLabel?.text = cycleTimeLeft
+    }
+    
+    // MARK: - UI Actions
+    @objc private func tapBreathingView(recognizer: UITapGestureRecognizer) {
+        output?.onBreathingViewTap()
+    }
+    
+    
+    // MARK: - Private Methods
+    private func setupPreCycleState() {
+        breathingView?.gestureRecognizers = []
+        allLabels.forEach { $0?.isHidden = true }
+    }
+    
+    private func setupRunningCycleState() {
+        allLabels.forEach { $0?.isHidden = false }
+        promptLabel?.isHidden = true
     }
     
     private func propertyAnimator(phase: BreathingPhaseViewModel) -> UIViewPropertyAnimator {
@@ -113,6 +135,7 @@ final class BreathingViewController: UIViewController, BreathingViewInput {
             self.breathingView?.backgroundColor = phase.color
             self.view.layoutIfNeeded()
         }
+        animator.addCompletion { _ in self.output?.onPhaseAnimationEnd(phase: phase) }
         return animator
     }
     

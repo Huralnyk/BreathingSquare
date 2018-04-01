@@ -32,9 +32,10 @@ class BreathingViewControllerTests: XCTestCase {
         // then
         XCTAssertNotNil(sut.breathingView)
         XCTAssertNotNil(sut.promptLabel)
-        XCTAssertNotNil(sut.phaseTypeLabel)
-        XCTAssertNotNil(sut.currentPhaseTimerLabel)
-        XCTAssertNotNil(sut.breathingCycleTimerLabel)
+        XCTAssertNotNil(sut.phaseTitleLabel)
+        XCTAssertNotNil(sut.phaseTimerLabel)
+        XCTAssertNotNil(sut.cycleTimerTitleLabel)
+        XCTAssertNotNil(sut.cycleTimerLabel)
     }
     
 }

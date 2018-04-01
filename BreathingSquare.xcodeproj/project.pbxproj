@@ -19,9 +19,11 @@
 		A9223A1D206F6C5200501AF8 /* breathing_cycle.json in Resources */ = {isa = PBXBuildFile; fileRef = A9223A1C206F6C5200501AF8 /* breathing_cycle.json */; };
 		A9223A1F206F6C9700501AF8 /* valid_cycle.json in Resources */ = {isa = PBXBuildFile; fileRef = A9223A1E206F6C9700501AF8 /* valid_cycle.json */; };
 		A9223A23206F6F7900501AF8 /* BreathingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A22206F6F7900501AF8 /* BreathingViewPresenter.swift */; };
-		A9223A25206F6FCD00501AF8 /* BreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A24206F6FCD00501AF8 /* BreathingView.swift */; };
+		A9223A25206F6FCD00501AF8 /* BreathingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A24206F6FCD00501AF8 /* BreathingViewInput.swift */; };
 		A9223A27206F728400501AF8 /* BreathingPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A26206F728400501AF8 /* BreathingPhaseViewModel.swift */; };
 		A9223A2C206F785300501AF8 /* UIColor+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9223A2B206F785300501AF8 /* UIColor+Extenstions.swift */; };
+		A939A0362070C675005AC7F1 /* TimerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939A0352070C675005AC7F1 /* TimerFormatter.swift */; };
+		A939A0382070DD15005AC7F1 /* BreathingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939A0372070DD15005AC7F1 /* BreathingViewOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +53,11 @@
 		A9223A1C206F6C5200501AF8 /* breathing_cycle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breathing_cycle.json; sourceTree = "<group>"; };
 		A9223A1E206F6C9700501AF8 /* valid_cycle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = valid_cycle.json; sourceTree = "<group>"; };
 		A9223A22206F6F7900501AF8 /* BreathingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewPresenter.swift; sourceTree = "<group>"; };
-		A9223A24206F6FCD00501AF8 /* BreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingView.swift; sourceTree = "<group>"; };
+		A9223A24206F6FCD00501AF8 /* BreathingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewInput.swift; sourceTree = "<group>"; };
 		A9223A26206F728400501AF8 /* BreathingPhaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPhaseViewModel.swift; sourceTree = "<group>"; };
 		A9223A2B206F785300501AF8 /* UIColor+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extenstions.swift"; sourceTree = "<group>"; };
+		A939A0352070C675005AC7F1 /* TimerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFormatter.swift; sourceTree = "<group>"; };
+		A939A0372070DD15005AC7F1 /* BreathingViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,8 @@
 			children = (
 				A92239EC206F5E2F00501AF8 /* BreathingViewController.swift */,
 				A92239EE206F5E2F00501AF8 /* Main.storyboard */,
-				A9223A24206F6FCD00501AF8 /* BreathingView.swift */,
+				A9223A24206F6FCD00501AF8 /* BreathingViewInput.swift */,
+				A939A0372070DD15005AC7F1 /* BreathingViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			children = (
 				A9223A22206F6F7900501AF8 /* BreathingViewPresenter.swift */,
 				A9223A26206F728400501AF8 /* BreathingPhaseViewModel.swift */,
+				A939A0352070C675005AC7F1 /* TimerFormatter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -288,8 +294,10 @@
 				A9223A2C206F785300501AF8 /* UIColor+Extenstions.swift in Sources */,
 				A92239ED206F5E2F00501AF8 /* BreathingViewController.swift in Sources */,
 				A9223A13206F667200501AF8 /* BreathingPhase.swift in Sources */,
+				A939A0362070C675005AC7F1 /* TimerFormatter.swift in Sources */,
+				A939A0382070DD15005AC7F1 /* BreathingViewOutput.swift in Sources */,
 				A9223A27206F728400501AF8 /* BreathingPhaseViewModel.swift in Sources */,
-				A9223A25206F6FCD00501AF8 /* BreathingView.swift in Sources */,
+				A9223A25206F6FCD00501AF8 /* BreathingViewInput.swift in Sources */,
 				A92239EB206F5E2F00501AF8 /* AppDelegate.swift in Sources */,
 				A9223A15206F66BB00501AF8 /* BreathingPhaseProvider.swift in Sources */,
 				A9223A23206F6F7900501AF8 /* BreathingViewPresenter.swift in Sources */,

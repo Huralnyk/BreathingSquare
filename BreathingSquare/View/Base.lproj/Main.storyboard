@@ -31,13 +31,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-AP-4sN">
                                         <rect key="frame" x="65.5" y="111" width="149.5" height="58"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[PHASE TYPE]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSN-d0-EN7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[PHASE TYPE]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSN-d0-EN7" userLabel="Phase Title Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="149.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pog-63-lIk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pog-63-lIk" userLabel="Phase Timer Label">
                                                 <rect key="frame" x="42" y="29" width="65.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -56,29 +56,41 @@
                                     <constraint firstItem="mKt-AP-4sN" firstAttribute="centerY" secondItem="KJp-LP-Fda" secondAttribute="centerY" id="rSS-dQ-c5O"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining 00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-jf-Ot2">
-                                <rect key="frame" x="147.5" y="586" width="80" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="52N-d7-C5X">
+                                <rect key="frame" x="0.0" y="586" width="0.0" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLC-GS-9aO" userLabel="Cycle Timer Title Label">
+                                        <rect key="frame" x="147.5" y="0.0" width="80" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-jf-Ot2" userLabel="Cycle Timer Label">
+                                        <rect key="frame" x="0.0" y="20.5" width="0.0" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KJp-LP-Fda" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HWK-Xp-T6P"/>
-                            <constraint firstItem="giC-jf-Ot2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IEQ-US-qkG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="giC-jf-Ot2" secondAttribute="bottom" constant="40" id="KaF-iK-FXE"/>
                             <constraint firstItem="KJp-LP-Fda" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NlY-zZ-qSb"/>
+                            <constraint firstAttribute="bottom" secondItem="52N-d7-C5X" secondAttribute="bottom" constant="40" id="gTd-9N-58O"/>
+                            <constraint firstItem="52N-d7-C5X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pN9-As-rv5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="breathingCycleTimerLabel" destination="giC-jf-Ot2" id="dO1-YQ-Jam"/>
                         <outlet property="breathingView" destination="KJp-LP-Fda" id="gxM-BM-SaC"/>
                         <outlet property="breathingViewWidth" destination="dTS-Sl-OIa" id="gBc-2q-wrd"/>
-                        <outlet property="currentPhaseTimerLabel" destination="pog-63-lIk" id="Vql-dw-o2y"/>
-                        <outlet property="phaseTypeLabel" destination="SSN-d0-EN7" id="djU-e0-fmq"/>
-                        <outlet property="promptLabel" destination="46S-ry-YrJ" id="H6s-B1-ayL"/>
+                        <outlet property="cycleTimerLabel" destination="giC-jf-Ot2" id="bau-Ob-L1Q"/>
+                        <outlet property="cycleTimerTitleLabel" destination="MLC-GS-9aO" id="8Bj-JC-YVk"/>
+                        <outlet property="phaseTimerLabel" destination="pog-63-lIk" id="8Kc-ds-zJq"/>
+                        <outlet property="phaseTitleLabel" destination="SSN-d0-EN7" id="Uuq-Z7-dU8"/>
+                        <outlet property="promptLabel" destination="46S-ry-YrJ" id="C8v-PJ-kw4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
