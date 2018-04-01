@@ -29,9 +29,17 @@ extension BreathingViewPresenter: BreathingViewOutput {
     }
     
     func onBreathingViewTap() {
+        view?.runPreCycleAnimation()
+    }
+    
+    func onPreCycleAnimationEnd() {
         let phases = provider.fetchPhases()
         let viewModels = phases.flatMap(BreathingPhaseViewModel.init(phase:))
-        view?.startCycle(viewModels: viewModels)
+        view?.runCycleAnimation(viewModels: viewModels)
+    }
+    
+    func onCycleAnimationEnd() {
+        view?.setupInitialState()
     }
     
 }

@@ -22,23 +22,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJp-LP-Fda">
                                 <rect key="frame" x="47" y="193.5" width="280" height="280"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i1H-ci-OUq">
-                                        <rect key="frame" x="-47" y="-5033.5" width="0.0" height="10347"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP HERE TO BREATHE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46S-ry-YrJ">
+                                        <rect key="frame" x="73" y="111.5" width="134.5" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-AP-4sN">
+                                        <rect key="frame" x="65.5" y="111" width="149.5" height="58"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP HERE TO BREATHE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46S-ry-YrJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="10289"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[PHASE TYPE]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSN-d0-EN7">
-                                                <rect key="frame" x="112.5" y="10289" width="149.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="149.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pog-63-lIk">
-                                                <rect key="frame" x="154.5" y="10318" width="65.5" height="29"/>
+                                                <rect key="frame" x="42" y="29" width="65.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -48,10 +48,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.31707589285714288" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="i1H-ci-OUq" firstAttribute="centerX" secondItem="KJp-LP-Fda" secondAttribute="centerX" id="IEl-dA-vgw"/>
-                                    <constraint firstItem="i1H-ci-OUq" firstAttribute="centerY" secondItem="KJp-LP-Fda" secondAttribute="centerY" id="KGc-D4-WJF"/>
+                                    <constraint firstItem="46S-ry-YrJ" firstAttribute="centerY" secondItem="KJp-LP-Fda" secondAttribute="centerY" id="Qfx-bl-aS7"/>
                                     <constraint firstAttribute="width" secondItem="KJp-LP-Fda" secondAttribute="height" multiplier="1:1" id="UVj-IX-3yh"/>
+                                    <constraint firstItem="46S-ry-YrJ" firstAttribute="centerX" secondItem="KJp-LP-Fda" secondAttribute="centerX" id="VoM-dP-hWf"/>
+                                    <constraint firstItem="mKt-AP-4sN" firstAttribute="centerX" secondItem="KJp-LP-Fda" secondAttribute="centerX" id="WFJ-ZW-2A1"/>
                                     <constraint firstAttribute="width" constant="280" id="dTS-Sl-OIa"/>
+                                    <constraint firstItem="mKt-AP-4sN" firstAttribute="centerY" secondItem="KJp-LP-Fda" secondAttribute="centerY" id="rSS-dQ-c5O"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining 00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-jf-Ot2">

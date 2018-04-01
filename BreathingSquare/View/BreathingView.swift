@@ -11,7 +11,8 @@ import Foundation
 protocol BreathingViewInput: class {
     
     func setupInitialState()
-    func startCycle(viewModels: [BreathingPhaseViewModel])
+    func runPreCycleAnimation()
+    func runCycleAnimation(viewModels: [BreathingPhaseViewModel])
     
 }
 
@@ -19,5 +20,7 @@ protocol BreathingViewOutput {
     
     func onViewLoad()
     func onBreathingViewTap()
+    func onPreCycleAnimationEnd()
+    func onCycleAnimationEnd()
     
 }
